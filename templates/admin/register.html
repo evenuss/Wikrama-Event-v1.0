@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-4.4.1/css/bootstrap.min.css')}}" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Admin</title>
+<style type="text/css">
+
+body {
+background: url('/static/img/konser.jpg') no-repeat fixed;
+   -webkit-background-size: 100% 100%;
+   -moz-background-size: 100% 100%;
+   -o-background-size: 100% 100%;
+   background-size: 100% 100%;
+}
+
+.form1{
+width: 100px;
+position: absolute;
+top: 50%;
+left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+ }
+</style>
+</head>
+<body>
+<div class="p-1 mb-5 bg-dark text-white">
+  <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active " href="/all/event" style="color: #fff">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/new/event" style="color: #fff">New Event</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/new/member" style="color: #fff">New Member</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/logout" style="color: #fff">Logout</a>
+  </li>
+</ul>
+</div>
+<br>
+<table align="center" style="margin-top: 2rem;">
+<h3 align="center" style="color: white;"><strong>Masukan NIS</strong></h3>
+	<form method='POST' class="#form1" enctype="multipart/form-data" >
+		<tr>
+			<td ><input type="text" name="nis"></td>
+            <td><input type="submit" class="btn bg-purple btn-info"></input></td>
+        </tr>
+		
+		
+			
+	</form>
+</div>
+</table>
+</body>
+</html>
+

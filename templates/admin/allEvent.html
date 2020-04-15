@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>All Event</title>
+<style type="text/css">
+.card-columns{
+	margin: 25px 70px 20px 120px;
+}
+body {
+background: url('/static/img/konser.jpg') no-repeat fixed;
+   -webkit-background-size: 100% 100%;
+   -moz-background-size: 100% 100%;
+   -o-background-size: 100% 100%;
+   background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+	<div class="p-1 mb-2 bg-dark text-white">
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link active " href="/all/event" style="color: #fff">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="/new/event" style="color: #fff">New Event</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/new/member" style="color: #fff">New Member</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout" style="color: #fff">Logout</a>
+      </li>
+</ul>
+</div>
+<br>
+
+<div class="card-columns">
+  {% for data in data %}
+<div class="card" style="width: 18rem;">
+  <img src="/static/img/{{data.foto}}" class="card-img-top" alt="...">
+  <div class="card-body">
+     <h5 class="card-title"><strong><a href="/detail/{{data._id}}">{{data.name}}</a></strong></h5>
+       <h6 class="card-title">Rp.{{data.biaya}}</h6>
+       <h6 class="card-title">Tanggal : {{data.tanggalMulai}}</h6>      
+      <p class="card-text"><small class="text-muted">Categori : <i>{{data.categori}}</i></small></p>
+      <a href="/delete/event/{{data._id}}/{{data.name}}" class="btn bg-purple btn-info">Batalkan</a>
+      <a href="/edit/event/{{data._id}}/{{data.name}}" class="btn bg-purple btn-info">Edit</a>
+  </div>
+</div>{% endfor %}
+</div>
+
+</body>
+</html>

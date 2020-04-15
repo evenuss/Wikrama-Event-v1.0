@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap-4.4.1/css/bootstrap.min.css')}}" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<title>Admin - Event edit</title>
+<style type="text/css">
+
+body {
+background: url('/static/img/konser.jpg') no-repeat fixed;
+   -webkit-background-size: 100% 100%;
+   -moz-background-size: 100% 100%;
+   -o-background-size: 100% 100%;
+   background-size: 100% 100%;
+}
+
+.form1{
+width: 100px;
+position: absolute;
+top: 50%;
+left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+ }
+</style>
+</head>
+
+<body>
+<div class="p-1 mb-2 bg-dark text-white">
+  <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active " href="/all/event" style="color: #fff">Home</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/new/event" style="color: #fff">New Event</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/new/member" style="color: #fff">New Member</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/logout" style="color: #fff">Logout</a>
+  </li>
+</ul>
+</div>
+<br>
+<table align="center">
+<h3 align="center" style="color: white;"><strong>Create Event</strong></h3>
+	<form method='POST' class="#form1" enctype="multipart/form-data">
+		<tr>	
+			<td style="color: white;">Nama Event</td>
+			<td><input value="{{data.name}}" class="form-control form-control-sm" type="text" placeholder="Nama event...." name="eventName"></td>
+		</tr>
+		
+		<tr>	
+			<td style="color: white;">Categori Event</td>
+			<td><select class="form-control form-control-sm" value="{{data.categori}}" name="categori">
+  				<option value="Musik">Musik</option>
+  				<option value="Edukasi">Edukasi</option>
+  				<option value="Seni">Seni</option>
+  				<option value="Rligi">Religi</option>
+			</select></td>
+        </tr>
+        
+		<tr>	
+			<td style="color: white;">Promotor</td>
+			<td><input class="form-control form-control-sm" value="{{data.promotor}}" type="text" placeholder="Ketua acara...." name="promotor"></td>
+        </tr>
+        
+		<tr>	
+			<td style="color: white;">Foto Event</td>
+			<td><input type="file" class="form-control-file" value="{{data.foto}}" style="color: white;" name="image"></td>
+        </tr>
+        
+		<tr>	
+			<td style="color: white;">Tanggal Event</td>
+			<td><input class="form-control form-control-sm" value="{{data.tanggalMulai}}" type="date" name="waktuMulai"></td>
+        </tr>
+        
+		<tr>
+		<td><input type="submit" class="btn bg-purple btn-info"></input></td>
+		</tr>
+	</form>
+</div>
+</table>
+
+</body>
+</html>
+
